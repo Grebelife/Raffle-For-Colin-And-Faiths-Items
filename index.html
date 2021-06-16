@@ -4,21 +4,731 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hello Bulma!</title>
+	<title>Raffle for Colin and Faith's Items</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-	<section class="section">
-		<div class="container">
-			<h1 class="title">
-				Hello World
-			</h1>
-			<p class="subtitle">
-				My first website with <strong>Bulma</strong>!
-			</p>
+	<section class="hero">
+		<div class="hero-body has-text-centered">
+			<a href="https://www.grebelife.com">
+				<img src="images/Grebelife.png" alt="Grebelife" width="25%">
+			</a>
 		</div>
 	</section>
+	<section class="hero is-dark" style="z-index: 5;">
+		<div class="hero-body">
+			<div class="title">
+				Raffle for Colin and Faith's Items
+			</div>
+			<div class="subtitle">
+				Since Colin and Faith are moving to BC, they cannot bring all of their belongings with them, so
+				they are putting them up for Grebelites to buy raffle tickets for!
+			</div>
+			<div class="container">
+				<div class="columns is-vcentered">
+					<div class="column">
+						<div class="notification has-text-dark is-size-5">
+							<div>
+								You can choose how many tickets to buy and how many tickets to put
+								towards
+								each item.
+							</div>
+							<br>
+							<div>Ticket prices:</div>
+							<br>
+							<ul>
+								<li><b>1 for $1</b> (1.00 per ticket)</li>
+								<li><b>7 for $5</b> (0.71 per ticket)</li>
+								<li><b>15 for $10</b> (0.67 per ticket)</li>
+								<li><b>25 for $15</b> (0.60 per ticket)</li>
+							</ul>
+						</div>
+
+
+					</div>
+					<div class="column">
+						<img src="images/raffleImage.png" alt="Grebel Raffle Image">
+					</div>
+				</div>
+
+			</div>
+			<div class="is-size-4 has-text-centered">
+				<em>Please e-transfer payments to: <b><a
+							href="mailto:faith.friesen90@gmail.com">faith.friesen90@gmail.com</a></b></em>
+			</div>
+
+
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+
+
+			<form id="raffle_form" x-data="{
+				tickets_purchased: 0,
+				tickets_used: 0,
+				valid: true,
+				items: [
+					{
+						id: 1,
+						name: 'Book Set - A Year of Biblical Womanhood, Yes Please, Jesus Feminist',
+						image: 'images/_m8+Cht_S_q1zE8Lk68lug_thumb_416.jpg',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 2,
+						name: 'Cards Against Humanity',
+						image: 'images/+fDTAuYbS9yeGHNxtBYdOA_thumb_3fd.jpg',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 3,
+						name: 'Popsicle Maker',
+						image: 'images/+rN68+p2RqOjOdWebHYmkw_thumb_407.jpg',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 4,
+						name: 'Stuffed Animals',
+						image: 'images/+xYpRx3rTZ683mVI3MLwVw_thumb_41a.jpg',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 5,
+						name: 'Book Set - Metallica, Asshole, DNA of Relationships',
+						image: 'images/0V3yF+puRH2S80xHHYu_KQ_thumb_417.jpg',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 6,
+						name: 'Apples Mug',
+						image: 'images/2o4KPkbTQTCDTkZFiaHY4g_thumb_403.jpg',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 7,
+						name: 'EcoWash',
+						image: 'images/2pofA3EDQzO3ZxBzXye+EQ_thumb_3f9.jpg',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 8,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 9,
+						name: 'each',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 10,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 11,
+						name: 'each',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 12,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 13,
+						name: 'each',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 14,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 15,
+						name: 'each',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 16,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 17,
+						name: 'each',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 18,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 19,
+						name: 'each',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 20,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 21,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 22,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 23,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 24,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 25,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 26,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 27,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 28,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 29,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 30,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 31,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 32,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 33,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 34,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 35,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 36,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 37,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 38,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 39,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 40,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 41,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 42,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 43,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 44,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 45,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 46,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 47,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 48,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 49,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 40,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 41,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 42,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 43,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 44,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 45,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 46,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 47,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 48,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 49,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 50,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 61,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 62,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 63,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 64,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 65,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 66,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 67,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 68,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 69,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 70,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 71,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 72,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 73,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 74,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 75,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 76,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 77,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 78,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					{
+						id: 79,
+						name: 'form',
+						image: '',
+						minTickets: 1,
+						ticketsUsed: 0,
+					},
+					
+
+				],
+				updateTicketsUsed() {
+					this.tickets_used = 0;
+					this.items.forEach((item, index) => {
+						this.tickets_used += parseInt(item.ticketsUsed);
+						console.log(this.tickets_used);
+					});
+				}
+			}" x-on:submit.prevent="mysubmit()">
+				<div class="field">
+					<label class="label">Name</label>
+					<div class="control">
+						<input name="name" class="input" type="text" placeholder="Text input" required>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Email</label>
+					<div class="control">
+						<input name="email" class="input" type="email" placeholder="Email" required>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">E-transfer Complete</label>
+					<div class="control">
+						<label class="checkbox">
+							<input type="checkbox" name="etransfer_complete" value="Yes" required>
+							I have made a payment via e-transfer
+						</label>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Number of Tickets Payed For</label>
+					<div class="control">
+						<div class="select">
+							<select name="tickets_purchased" x-model="tickets_purchased">
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="7">7</option>
+								<option value="15">15</option>
+								<option value="25">25</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+				<template x-for="item in items">
+					<div class="columns">
+						<div class="column is-one-third">
+							<img x-bind:src="item.image">
+						</div>
+						<div class="column">
+							<div class="field">
+								<label class="label" x-text="item.id + ': ' + item.name"></label>
+								<div class="help"
+									x-bind:class="{'is-danger' : item.ticketsUsed > 0 && item.ticketsUsed < item.minTickets}"
+									x-text="'Minimum ticket amount is: ' + item.minTickets"></div>
+								<div class="control">
+									<input class="input"
+										x-bind:class="{'is-danger' : item.ticketsUsed > 0 && item.ticketsUsed < item.minTickets}"
+										type="number" x-bind:min="item.minTickets"
+										x-model="item.ticketsUsed"
+										x-on:change="updateTicketsUsed();">
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div x-text="item.name"></div>
+				</template>
+
+				<div class="field is-grouped">
+					<div class="control">
+						<button class="button is-link"
+							x-bind:disabled="(tickets_purchased - tickets_used) < 0">Submit</button>
+					</div>
+				</div>
+
+				<div class="tag is-large" x-bind:class="{'is-danger': tickets_purchased - tickets_used < 0}"
+					style="position:fixed; right:0; bottom:0;"
+					x-text="(tickets_purchased - tickets_used) + ' tickets remaining'"
+					x-show="tickets_purchased"></div>
+			</form>
+		</div>
+
+	</section>
+	<script>
+		window.mysubmit = () => {
+			form = document.getElementById('raffle_form');
+			data = new FormData(form);
+			fetch("https://script.google.com/macros/s/AKfycbwUVBzHAUWPIyJcSfTobTDZLgQgkQXl0QSG0q_yIPG185JcddPMXyjcESPUfT_jXhK3sw/exec", {
+				method: 'POST',
+				body: data
+			})
+				.then(response => {
+					window.location.replace("https://www.grebelife.com/raffle-for-colin-and-faiths-items");
+				})
+				.catch(error => console.error('Error!', error.message))
+		}
+	</script>
 </body>
 
 </html>
