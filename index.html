@@ -415,77 +415,77 @@
 						ticketsUsed: 0,
 					},
 					{
-						id: 40,
+						id: 50,
 						name: 'Grey Cardigan',
 						image: 'images/IMG_0863.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 41,
+						id: 51,
 						name: 'Black Cardigan',
 						image: 'images/IMG_0865.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 42,
+						id: 52,
 						name: 'O-Week 2016 Hoodie',
 						image: 'images/IMG_0866.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 43,
+						id: 53,
 						name: 'White Hoodie',
 						image: 'images/IMG_0867.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 44,
+						id: 54,
 						name: 'Small Black Sweater',
 						image: 'images/IMG_0868.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 45,
+						id: 55,
 						name: 'Blue Hoodie',
 						image: 'images/IMG_0869.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 46,
+						id: 56,
 						name: 'Khaki Pants',
 						image: 'images/IMG_0870.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 47,
+						id: 57,
 						name: 'Navy Blue Shirt',
 						image: 'images/IMG_0871.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 48,
+						id: 58,
 						name: '#REDforED Shirt',
 						image: 'images/IMG_0872.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 49,
+						id: 59,
 						name: 'Black Pants',
 						image: 'images/IMG_0873.jpg',
 						minTickets: 1,
 						ticketsUsed: 0,
 					},
 					{
-						id: 50,
+						id: 60,
 						name: 'Cropped Grey Hoodie',
 						image: 'images/IMG_0874.jpg',
 						minTickets: 1,
@@ -673,9 +673,9 @@
 									x-bind:class="{'is-danger' : item.ticketsUsed > 0 && item.ticketsUsed < item.minTickets}"
 									x-text="'Minimum ticket amount is: ' + item.minTickets"></div>
 								<div class="control">
-									<input class="input"
+									<input class="input" style="width:35%" x-bind:name="item.id"
 										x-bind:class="{'is-danger' : item.ticketsUsed > 0 && item.ticketsUsed < item.minTickets}"
-										type="number" x-bind:min="item.minTickets"
+										 x-bind:min="item.minTickets"
 										x-model="item.ticketsUsed"
 										x-on:change="updateData(item);">
 								</div>
